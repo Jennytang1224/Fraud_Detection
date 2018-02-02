@@ -20,7 +20,7 @@ def getDescription(data):
     return corpus, labels
 
 def vectorizer(corpus, labels):
-    vectorizer = TfidfVectorizer(min_df=0.1, max_df = 0.8, sublinear_tf=True, use_idf=True,stop_words='english')
+    vectorizer = TfidfVectorizer(min_df=0.1, max_df = 0.9, sublinear_tf=True, use_idf=True,stop_words='english')
     corpus_tf_idf = vectorizer.fit_transform(corpus)
     features = vectorizer.get_feature_names()
     Xtr = corpus_tf_idf
@@ -77,6 +77,13 @@ def plot_tfidf_classfeats_h(dfs):
         plt.subplots_adjust(bottom=0.09, right=0.97, left=0.15, top=0.95, wspace=0.52)
     plt.show()
 
+def predict(list_of_words, df_norm, df_fraud):
+    score_norm = df_norm[df_norm['feature'].isin(list_of_words)].sum()
+    score_fraud = df_fraud[df_fraud['feature'].isin(list_of_words)].sum()
+    if score_norm > score_fraud:
+        return 'Normal event.'
+    else:
+        return 'Fraud.'
 
 if __name__ == '__main__':
     dfs = top_feats_by_class(Xtr, y, features, min_tfidf=0.1, top_n=25)
