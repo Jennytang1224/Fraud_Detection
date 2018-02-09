@@ -1,4 +1,5 @@
-Dealing with the entire end to end pipeline of data science through a case study.
+
+This case study is to develop a fraud detection model for online ticket marketplace that deals with the entire end to end pipeline of data science.
 
 Topics including:
 * deploying a DS application
