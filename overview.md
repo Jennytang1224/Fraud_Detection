@@ -128,19 +128,4 @@ raw_data = response.json()
 
 ```
 
-1. Write a function that periodically fetches new data, generates a predicted fraud probability, and saves it to your database (after verifying that the data hasn't been seen before).
-
-**Make sure your app is adding the examples to the database with predicted fraud probabilities.**
-
-## Day 2: Afternoon
-
-### Step 7: Dashboard
-
-#### [Deliverable]: Web front end to present results
-
-You want to present potentially fraudulent transactions with their probability scores from your model. The transactions should be segmented into 3 groups: low risk, medium risk, or high risk (based on the probabilities).
-
-* Add route in Flask app for a dashboard
-* Read data from postgres/mongodb
-* Return HTML with the data
-    * To generate the HTML from the json data from the database, either just use simple string concatenation or Jinja2 templates.
+Write a function that periodically fetches new data, generates a predicted fraud probability, and saves it to your database (after verifying that the data hasn't been seen before).

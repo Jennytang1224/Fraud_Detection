@@ -14,5 +14,5 @@ Topics including:
 
 #### Notes
 
-* [Overview and schedule](overview.md)
-* [building your model](model_notes.md): notes on how to get started with the dataset and how to save model once trained it.
+* [Overview and schedule](overview.md): project overview
+* [Building your model](model_notes.md): notes on how to get started with the dataset and how to save model once trained it.
